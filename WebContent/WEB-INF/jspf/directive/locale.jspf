@@ -1,0 +1,5 @@
+<fmt:setBundle basename="message" var="msg" scope="session"/>
+
+<fmt:setBundle basename="interface" var="intface" scope="session"/>
+
+<fmt:setBundle basename="placeholder" var="plsholder" scope="session"/>

@@ -1,0 +1,102 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/locale.jspf" %>
+
+<c:set scope="session" var="userLocale" value="${empty userLocale ? 'ru' : userLocale}"/>
+<fmt:setLocale value="${userLocale}"/>
+<header class="site-header">
+    <div class="wrap">
+        <div class="title-area">
+            <p class="site-title">
+                <a href="<c:url value="/main_page.html"/>" title="University">
+                    University
+                </a>
+            </p>
+        </div>
+
+        <button class="menu-toggle nav-primary" aria-expanded="false" aria-pressed="false" role="button" id="mobile-genesis-nav-primary">
+            Menu &#9776;
+        </button>
+        <nav class="nav-primary">
+
+            <ul class="menu nav-menu">
+
+                <%--<li class="first menu-item">--%>
+                    <%--<a href="main_page.html"><fmt:message key="menu.main.link" bundle="${intface}"/></a>--%>
+                <%--</li>--%>
+                <c:if test="${not empty user}">
+                    <li class="menu-item ${title eq 'faculties' ? 'current-menu-item' : ''}">
+                        <a href="controller?command=listFaculties"><fmt:message key="menu.faculties.link" bundle="${intface}"/></a>
+                    </li>
+                    <li class="menu-item ${title eq 'settings' ? 'current-menu-item' : ''}">
+                        <a href="controller?command=settingsView"><fmt:message key="menu.setting.link" bundle="${intface}"/></a>
+                    </li>
+                </c:if>
+
+                <c:choose>
+                    <c:when test="${userRole.name eq 'admin'}">
+                        <li class="menu-item ${title eq 'subjects' ? 'current-menu-item' : ''}">
+                            <a href="controller?command=listSubjects"><fmt:message key="menu.subjects.link" bundle="${intface}"/></a>
+                        </li>
+
+                        <li class="menu-item ${title eq 'sheets' ? 'current-menu-item' : ''}">
+                            <a href="controller?command=listSheets"><fmt:message key="menu.sheets.link" bundle="${intface}"/></a>
+                        </li>
+                        <li class="menu-item ${title eq 'entrants' ? 'current-menu-item' : ''}">
+                            <a href="controller?command=listEntrants"><fmt:message key="menu.entrants.link" bundle="${intface}"/></a>
+                        </li>
+                    </c:when>
+                    <c:when test="${userRole.name eq 'entrant'}">
+                        <li class="menu-item ${title eq 'applications' ? 'current-menu-item' : ''}">
+                            <a href="controller?command=listApplications"><fmt:message key="menu.applications.link" bundle="${intface}"/></a>
+                        </li>
+                        <li class="menu-item ${title eq 'marks' ? 'current-menu-item' : ''}">
+                            <a href="controller?command=listMarks"><fmt:message key="menu.marks.link" bundle="${intface}"/></a>
+                        </li>
+                    </c:when>
+                </c:choose>
+
+                <c:if test="${empty user and title ne 'Register'}">
+                    <li class="menu-item ${title eq 'registration' ? 'current-menu-item' : ''}">
+                        <a href="register.jsp"><fmt:message key="menu.register.link" bundle="${intface}"/></a>
+                    </li>
+                </c:if>
+
+                <c:if test="${empty user}">
+                    <li class="menu-item">
+                        <form style="display:inline" action="controller" method="post">
+                            <input type="hidden" name="command" value="selectLanguage">
+                            <select name="localeToSet" onchange="this.form.submit()">
+                                <option value="en" ${userLocale eq 'en' ? 'selected' : ''}>English</option>
+                                <option value="ru" ${userLocale eq 'ru' ? 'selected' : ''}>Russian</option>
+                            </select>
+                        </form>
+                    </li>
+                </c:if>
+
+                <li class="right last menu-item">
+                    <c:choose>
+                        <c:when test="${not empty user}">
+                            <a href="controller?command=logout"><fmt:message key="menu.logout.link" bundle="${intface}"/></a>
+                        </c:when>
+                        <c:when test="${empty user}">
+                            <a href="login.jsp"><fmt:message key="menu.login.link" bundle="${intface}"/></a>
+                        </c:when>
+                    </c:choose>
+                </li>
+            </ul>
+
+
+        </nav>
+
+        <c:if test="${not empty user}">
+            <div class="user-info">
+                <fmt:message key="menu.hello" bundle="${intface}"/> ${user.login}!
+                <fmt:message key="menu.have.loged" bundle="${intface}"/> ${sessionScope.userRole.name}
+            </div>
+        </c:if>
+    </div>
+</header>
+
+
+

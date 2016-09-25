@@ -1,0 +1,68 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/locale.jspf" %>
+
+
+<footer class="site-footer">
+    <div class="wrap">
+        Bycheva corporation
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" />"></script>
+
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
+<%--<script src="<c:url value="/js/bootstrap.js"/>"></script>--%>
+
+
+
+<script src="<c:url value="/js/global.js"/>"></script>
+<script src="<c:url value="/js/responsivemenu.js"/>"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        calculateCertificateRatio();
+
+        //iterate through each textboxes and add keyup
+        //handler to trigger sum event
+        $(".subject_ratio").each(function() {
+
+            $(this).keyup(function(){
+                calculateCertificateRatio();
+            });
+        });
+
+
+
+    });
+
+    function calculateCertificateRatio() {
+
+        var ratio = 1;
+        var sum = 0;
+        //iterate through each textboxes and add the values
+        $(".subject_ratio").each(function() {
+
+            //add only if the value is number
+            if(!isNaN(this.value) && this.value.length!=0) {
+                ratio -= parseFloat(this.value);
+                sum += parseFloat(this.value);
+            }
+
+        });
+
+        //.toFixed() method will roundoff the final sum to 2 decimal places
+        $("#ratio").html(ratio.toFixed(2));
+
+        if(sum < 0 || sum > 1){
+            ${"updateButton"}.disabled = true;
+            $("#warning").addClass('error').html('<fmt:message key="text.sum.cannot.more.one" bundle="${intface}"/>');
+        }else{
+            $("#warning").removeClass('error').html('');
+            ${"updateButton"}.disabled = false;
+        }
+
+
+    }
+</script>
