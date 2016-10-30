@@ -1,4 +1,4 @@
-connect 'jdbc:derby://localhost:1527/SummaryTask4;creat=true;user=bycheva;password=root';
+connect 'jdbc:derby://localhost:1527/SummaryTask4;create=true;user=bycheva;password=root';
 
 DROP TABLE sheets_entrants;
 DROP TABLE passed_statuses;
