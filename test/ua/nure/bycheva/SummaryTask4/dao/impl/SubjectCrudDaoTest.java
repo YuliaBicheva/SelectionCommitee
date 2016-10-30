@@ -1,5 +1,13 @@
 package ua.nure.bycheva.SummaryTask4.dao.impl;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.naming.NamingException;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.junit.After;
 import org.junit.Before;
@@ -8,19 +16,13 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
 import ua.nure.bycheva.SummaryTask4.db.dao.SubjectDAO;
 import ua.nure.bycheva.SummaryTask4.db.dao.Table;
 import ua.nure.bycheva.SummaryTask4.db.entity.Subject;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
 import ua.nure.bycheva.SummaryTask4.exception.DataBaseAccessException;
-
-import javax.naming.NamingException;
-import java.sql.SQLException;
-import java.util.List;
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by yulia on 01.09.16.

@@ -1,9 +1,9 @@
 package ua.nure.bycheva.SummaryTask4.exception;
 
-import org.apache.log4j.Logger;
-
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
 
 /**
  * Holder for messages of exceptions and errors.

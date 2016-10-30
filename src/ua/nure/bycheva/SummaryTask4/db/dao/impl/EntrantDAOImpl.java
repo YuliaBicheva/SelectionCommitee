@@ -1,19 +1,25 @@
 package ua.nure.bycheva.SummaryTask4.db.dao.impl;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.apache.log4j.Logger;
+
+import ua.nure.bycheva.SummaryTask4.db.Fields;
+import ua.nure.bycheva.SummaryTask4.db.SQL;
 import ua.nure.bycheva.SummaryTask4.db.bean.UserEntrantBean;
 import ua.nure.bycheva.SummaryTask4.db.dao.AbstractDAO;
 import ua.nure.bycheva.SummaryTask4.db.dao.EntrantDAO;
-import ua.nure.bycheva.SummaryTask4.db.Fields;
-import ua.nure.bycheva.SummaryTask4.db.SQL;
 import ua.nure.bycheva.SummaryTask4.db.entity.Entrant;
 import ua.nure.bycheva.SummaryTask4.exception.DataBaseAccessException;
 import ua.nure.bycheva.SummaryTask4.exception.MessageManager;
-
-import javax.sql.DataSource;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by yulia on 15.08.16.

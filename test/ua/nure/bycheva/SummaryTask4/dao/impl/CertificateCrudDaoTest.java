@@ -1,5 +1,15 @@
 package ua.nure.bycheva.SummaryTask4.dao.impl;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.naming.NamingException;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.junit.After;
 import org.junit.Before;
@@ -8,22 +18,18 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import ua.nure.bycheva.SummaryTask4.db.Role;
 import ua.nure.bycheva.SummaryTask4.db.Status;
-import ua.nure.bycheva.SummaryTask4.db.dao.*;
+import ua.nure.bycheva.SummaryTask4.db.dao.CertificateDAO;
+import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
+import ua.nure.bycheva.SummaryTask4.db.dao.EntrantDAO;
+import ua.nure.bycheva.SummaryTask4.db.dao.Table;
+import ua.nure.bycheva.SummaryTask4.db.dao.UserDAO;
 import ua.nure.bycheva.SummaryTask4.db.entity.Certificate;
 import ua.nure.bycheva.SummaryTask4.db.entity.Entrant;
 import ua.nure.bycheva.SummaryTask4.db.entity.User;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
-
-import javax.naming.NamingException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.sql.SQLException;
-import java.util.List;
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by yulia on 01.09.16.

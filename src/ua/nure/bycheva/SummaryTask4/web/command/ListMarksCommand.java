@@ -15,7 +15,6 @@ import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
 import ua.nure.bycheva.SummaryTask4.db.dao.MarkDAO;
 import ua.nure.bycheva.SummaryTask4.db.dao.Table;
 import ua.nure.bycheva.SummaryTask4.db.entity.Entrant;
-import ua.nure.bycheva.SummaryTask4.db.entity.User;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
 
 /**

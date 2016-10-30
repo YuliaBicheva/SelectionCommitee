@@ -1,18 +1,24 @@
 package ua.nure.bycheva.SummaryTask4.web.command;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
+
 import ua.nure.bycheva.SummaryTask4.Path;
 import ua.nure.bycheva.SummaryTask4.db.bean.EntrantApplicationBean;
 import ua.nure.bycheva.SummaryTask4.db.bean.EntrantMarkBean;
 import ua.nure.bycheva.SummaryTask4.db.bean.UserEntrantBean;
-import ua.nure.bycheva.SummaryTask4.db.dao.*;
+import ua.nure.bycheva.SummaryTask4.db.dao.ApplicationDAO;
+import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
+import ua.nure.bycheva.SummaryTask4.db.dao.EntrantDAO;
+import ua.nure.bycheva.SummaryTask4.db.dao.MarkDAO;
+import ua.nure.bycheva.SummaryTask4.db.dao.Table;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by yulia on 01.01.01.

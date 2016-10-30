@@ -1,10 +1,10 @@
 package ua.nure.bycheva.SummaryTask4.db.dao;
 
+import java.util.List;
+
 import ua.nure.bycheva.SummaryTask4.db.entity.Entity;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
 import ua.nure.bycheva.SummaryTask4.exception.DataBaseAccessException;
-
-import java.util.List;
 
 /**
  * Created by yulia on 12.08.16.

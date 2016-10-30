@@ -1,10 +1,10 @@
 package ua.nure.bycheva.SummaryTask4;
 
-import org.apache.commons.dbcp2.BasicDataSource;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
+import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
  * Created by yulia on 01.09.16.

@@ -1,5 +1,11 @@
 package ua.nure.bycheva.SummaryTask4.dao.impl;
 
+import static org.junit.Assert.assertTrue;
+
+import java.sql.SQLException;
+
+import javax.naming.NamingException;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.junit.After;
 import org.junit.Before;
@@ -7,23 +13,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+
+import ua.nure.bycheva.SummaryTask4.db.Role;
+import ua.nure.bycheva.SummaryTask4.db.Status;
 import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
 import ua.nure.bycheva.SummaryTask4.db.dao.Table;
 import ua.nure.bycheva.SummaryTask4.db.dao.UserDAO;
-import ua.nure.bycheva.SummaryTask4.db.Role;
-import ua.nure.bycheva.SummaryTask4.db.Status;
 import ua.nure.bycheva.SummaryTask4.db.entity.Certificate;
 import ua.nure.bycheva.SummaryTask4.db.entity.Entrant;
 import ua.nure.bycheva.SummaryTask4.db.entity.User;
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
 import ua.nure.bycheva.SummaryTask4.exception.DataBaseAccessException;
-
-import javax.naming.NamingException;
-import java.sql.SQLException;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by yulia on 01.09.16.

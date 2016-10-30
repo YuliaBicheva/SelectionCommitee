@@ -1,12 +1,18 @@
 package ua.nure.bycheva.SummaryTask4.db.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
 import org.apache.log4j.Logger;
+
 import ua.nure.bycheva.SummaryTask4.exception.AppException;
 import ua.nure.bycheva.SummaryTask4.exception.DataBaseAccessException;
 import ua.nure.bycheva.SummaryTask4.exception.MessageManager;
-
-import javax.sql.DataSource;
-import java.sql.*;
 
 /**
  * Created by yulia on 12.08.16.

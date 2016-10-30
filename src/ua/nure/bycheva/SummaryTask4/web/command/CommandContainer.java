@@ -1,9 +1,9 @@
 package ua.nure.bycheva.SummaryTask4.web.command;
 
-import org.apache.log4j.Logger;
-
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.apache.log4j.Logger;
 
 /**
  * Holder for all commands.

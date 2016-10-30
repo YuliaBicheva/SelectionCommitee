@@ -1,13 +1,19 @@
+import javax.naming.NamingException;
+
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+
 import ua.nure.bycheva.SummaryTask4.DataSourceUtil;
 import ua.nure.bycheva.SummaryTask4.controller.ControllerLoginTest;
-import ua.nure.bycheva.SummaryTask4.dao.impl.*;
-
-import javax.naming.NamingException;
+import ua.nure.bycheva.SummaryTask4.dao.impl.ApplicationCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.CertificateCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.FacultyCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.FacultySubjectCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.SubjectCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.UserCrudDaoTest;
+import ua.nure.bycheva.SummaryTask4.dao.impl.UserDAOImplTest;
 
 @RunWith(Suite.class)
 @SuiteClasses(

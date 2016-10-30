@@ -1,21 +1,16 @@
 package ua.nure.bycheva.SummaryTask4.controller;
 
-import org.apache.commons.dbcp2.BasicDataSource;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import ua.nure.bycheva.SummaryTask4.Path;
-import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
-import ua.nure.bycheva.SummaryTask4.db.dao.Table;
-import ua.nure.bycheva.SummaryTask4.db.dao.UserDAO;
-import ua.nure.bycheva.SummaryTask4.db.Role;
-import ua.nure.bycheva.SummaryTask4.db.entity.User;
-import ua.nure.bycheva.SummaryTask4.exception.AppException;
-import ua.nure.bycheva.SummaryTask4.util.PasswordUtil;
-import ua.nure.bycheva.SummaryTask4.web.Controller;
+import static org.junit.Assert.assertFalse;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 
 import javax.naming.NamingException;
 import javax.servlet.ServletContext;
@@ -24,13 +19,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
-import java.sql.SQLException;
 
-import static org.junit.Assert.assertFalse;
-import static org.mockito.Mockito.*;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import ua.nure.bycheva.SummaryTask4.Path;
+import ua.nure.bycheva.SummaryTask4.db.Role;
+import ua.nure.bycheva.SummaryTask4.db.dao.DAOManager;
+import ua.nure.bycheva.SummaryTask4.db.dao.Table;
+import ua.nure.bycheva.SummaryTask4.db.dao.UserDAO;
+import ua.nure.bycheva.SummaryTask4.db.entity.User;
+import ua.nure.bycheva.SummaryTask4.exception.AppException;
+import ua.nure.bycheva.SummaryTask4.util.PasswordUtil;
+import ua.nure.bycheva.SummaryTask4.web.Controller;
 
 /**
  * Created by yulia on 01.09.16.
